@@ -39,27 +39,32 @@
 
 // My Work Experience
 (function() {
-    let specialist = document.getElementById('specialist');
-    let senior = document.getElementById('senior');
-    let analyst = document.getElementById('analyst');
-    let desc = document.getElementById('desc');
-
-    function specialistFunc() {
-        desc.innerHTML = "Functioning as the <span class='orange'>Technical Lead</span> for one of AFS's ServiceNow programs. Resposibilities include:"
-        + "<blockquote><span class='orange'>></span> Manage development team with notable projects including Telecom Integrations, Virtual Agent implementation, and Archiving of over 60 million records"
-        + "</br></br><span class='orange'>></span> Manage over a dozen client ServiceNow instances by organizing patching/upgrade schedules, weekly meetings with ServiceNow Rep, and monitoring platform performance/availability"
-        + "</br></br><span class='orange'>></span> Architect new solutions ranging from break fixes to multi-month application and integration projects</blockquote>";
-        
-        document.getElementById('dateSpec').className = 'visible';
-        document.getElementById('dateSen').className = 'hidden';
-        document.getElementById('dateAna').className = 'hidden';
-        specialist.className = 'orange';
-        senior.className = 'blue';
-        analyst.className = 'blue';  
+   
+    function getTarget(e) {
+        if(!e) {
+            e = window.event;
+        }
+        return e.target || e.srcElement;
     }
-    
-    function seniorFunc() {
-        desc.innerHTML = "Functioned as a <span class='orange'>Development Team Lead</span> for one of AFS's ServiceNow programs. Resposibilities include:"
+
+    function workExperience(e) {
+        let desc = document.getElementById('desc');
+        target = getTarget(e);
+        if(target.id == 'specialist') {
+            desc.innerHTML = "Functioning as the <span class='orange'>Technical Lead</span> for one of AFS's ServiceNow programs. Resposibilities include:"
+            + "<blockquote><span class='orange'>></span> Manage development team with notable projects including Telecom Integrations, Virtual Agent implementation, and Archiving of over 60 million records"
+            + "</br></br><span class='orange'>></span> Manage over a dozen client ServiceNow instances by organizing patching/upgrade schedules, weekly meetings with ServiceNow Rep, and monitoring platform performance/availability"
+            + "</br></br><span class='orange'>></span> Architect new solutions ranging from break fixes to multi-month application and integration projects</blockquote>";
+            
+            document.getElementById('dateSpec').className = 'visible';
+            document.getElementById('dateSen').className = 'hidden';
+            document.getElementById('dateAna').className = 'hidden';
+            specialist.className = 'orange';
+            senior.className = 'blue';
+            analyst.className = 'blue';  
+        }
+        else if(target.id == 'senior') {
+            desc.innerHTML = "Functioned as a <span class='orange'>Development Team Lead</span> for one of AFS's ServiceNow programs. Resposibilities include:"
         + "<blockquote><span class='orange'>></span> Led development team to deploy releases across various applications including Incident, Change, Problem, Knowledge, Service Portal, and Service Catalog"
         + "</br></br><span class='orange'>></span> Held weekly status meetings with various client IT Groups to create timelines and prioritize developments"
         + "</br></br><span class='orange'>></span> Managed over a dozen client ServiceNow instances by organizing patching/upgrade schedules, weekly meetings with ServiceNow Rep, and monitoring platform performance/availability</blockquote>";
@@ -69,24 +74,36 @@
         document.getElementById('dateAna').className = 'hidden';
         specialist.className = 'blue';
         senior.className = 'orange';
-        analyst.className = 'blue';  
+        analyst.className = 'blue'; 
+        }
+        else if(target.id == 'analyst'){
+            desc.innerHTML = "Functioned as a <span class='orange'>Business Analyst</span> for one of AFS's ServiceNow programs. Resposibilities include:"
+            + "<blockquote><span class='orange'>></span> Managed development team backlog coordinating with Accenture Leads and Client Stakeholders to gather, solution, and track requirements "
+            + "</br></br><span class='orange'>></span> Managed development team releases to ensure requirements meet client needs and follow development best practices"
+            + "</br></br><span class='orange'>></span> Support the management of client ServiceNow instance through performance and availability monitoring</blockquote>";
+    
+            document.getElementById('dateSpec').className = 'hidden';
+            document.getElementById('dateSen').className = 'hidden';
+            document.getElementById('dateAna').className = 'visible';
+            specialist.className = 'blue';
+            senior.className = 'blue';
+            analyst.className = 'orange'; 
+        }
+
+        if (e.preventDefault) {
+            e.preventDefault();
+        }
+        else {
+            e.returnValue = false;
+        }
     }
 
-    function analystFunc() {
-        desc.innerHTML = "Functioned as a <span class='orange'>Business Analyst</span> for one of AFS's ServiceNow programs. Resposibilities include:"
-        + "<blockquote><span class='orange'>></span> Managed development team backlog coordinating with Accenture Leads and Client Stakeholders to gather, solution, and track requirements "
-        + "</br></br><span class='orange'>></span> Managed development team releases to ensure requirements meet client needs and follow development best practices"
-        + "</br></br><span class='orange'>></span> Support the management of client ServiceNow instance through performance and availability monitoring</blockquote>";
-
-        document.getElementById('dateSpec').className = 'hidden';
-        document.getElementById('dateSen').className = 'hidden';
-        document.getElementById('dateAna').className = 'visible';
-        specialist.className = 'blue';
-        senior.className = 'blue';
-        analyst.className = 'orange'; 
+    let table = document.getElementById('experience');
+    if(table.addEventListener) {
+        table.addEventListener('click', function(e) {workExperience(e);}, false);
+    }
+    else {
+        table.attachEvent('onClick', function(e) {workExperience(e);});
     }
 
-    specialist.addEventListener('click', specialistFunc, false);
-    senior.addEventListener('click', seniorFunc, false);
-    analyst.addEventListener('click', analystFunc, false);
 }());
