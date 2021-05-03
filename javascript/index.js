@@ -27,9 +27,11 @@
     function stickyNav() {
         if (window.scrollY >= top) {
             nav.className = 'sticky';
+           // $('html').addClass('background');
         }
         else {
             nav.className = 'nonsticky';
+           // $('html').removeClass('background');
         }
     }
 

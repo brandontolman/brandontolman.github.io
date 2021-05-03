@@ -23,13 +23,21 @@ empty {
     color: #2F68BD;
     text-align: left;
     /*padding: 3.33%;*/
-    margin-left: 15%;
+    /*margin-left: 15%;
     margin-right: 15%;
-    width: 70%;
+    width: 70%;*/
+    /*width: 800px;*/
     vertical-align: middle;
     line-height: 350%;
     position: fixed;
     z-index: -99;
+    width: 100%;
+}
+
+#header_hello, #header_name, #header_I, #header_desc {
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
 }
 
 #header_hello{
@@ -134,7 +142,7 @@ li::before {
     width: 1040px;
     margin: 0px auto;
     padding-left: 20px;
-    padding-right: 20px;
+    padding-right:20px;
     padding-top: 30px;
     background-color: #293547;
     border: #293547 solid;
