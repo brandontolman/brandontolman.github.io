@@ -35,7 +35,12 @@
         }
     }
 
+    function resetTop() {
+        top = nav.offsetTop;
+    }
+
     window.addEventListener('scroll', stickyNav, false);
+    window.addEventListener('resize', resetTop, false);
 }());
 
 

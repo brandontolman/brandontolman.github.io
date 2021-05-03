@@ -278,7 +278,7 @@ li.toRead::before {
 
 .sticky {
     position: fixed;
-    top: 1;
+    top: 0;
     height: fit-content;
 }
 
