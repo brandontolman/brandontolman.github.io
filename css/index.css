@@ -29,6 +29,7 @@ empty {
     margin-right: 15%;
     width: 70%;*/
     /*width: 800px;*/
+    padding-top: 5%;
     vertical-align: middle;
     line-height: 350%;
     position: fixed;
@@ -277,7 +278,7 @@ li.toRead::before {
 
 .sticky {
     position: fixed;
-    top: 0;
+    top: 1;
     height: fit-content;
 }
 
