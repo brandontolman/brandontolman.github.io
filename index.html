@@ -6,7 +6,7 @@
         <meta http-equiv="author"
             content="Brandon Tolman" />
         <link href="css/index.css" type="text/css" rel="stylesheet" media="screen"/>
-        <link href="css/index.css" type="text/css" rel="stylesheet" media="handheld"/>
+        <link href="css/handheld.css" type="text/css" rel="stylesheet" media="handheld, (max-width: 600px)"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!--
         <link href="https://use.typekit.net/hrk3fny.css" type="text/css" rel="stylesheet"/>
@@ -27,10 +27,10 @@
 
             <nav id="nav" class='nonsticky'>
                 <a href="https://github.com/brandontolman" target="_blank"><img src="images/GitHub-color2.png" class="small" alt="GitHub"></a>
-                <a href="#about_me">About Me</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
+                <a href="#about_me" class='list'>About Me</a>
+                <a href="#experience" class='list'>Experience</a>
+                <a href="#projects" class='list'>Projects</a>
+                <a href="#contact" class='list'>Contact</a>
                 <a href="documents/resume(1).pdf" target="_blank">Resume</a>
                 <a href="https://www.linkedin.com/in/brandon-tolman/" target="_blank"><img src="images/LinkedIn.png" class="small" alt="LinkedIn"></a>
             </nav>
@@ -70,7 +70,7 @@
             </div><!--end of bookshelf-->
         </div><!--end of about_me-->
 
-        <div id="experience" class="large">
+        <div id="experience" class="large computer">
             <h2>My Work Experience</h3>
             <p>I started work with Accenture in June of 2018 shortly after receiving my degree from George Mason University. Below is a summary of my experience with Accenture so far. Click the titles 
                 in the left column for more details. </p>
@@ -100,6 +100,51 @@
                         Responsibilities included managing team's backlog, monitoring development of 
                         releases, and client ServiceNow platform oversight. 
                     </td>-->
+                </tr>
+            </table>
+        </div><!--end of experience-->
+
+<!--Mobile Experience. Only shows if device used is less than 600px. Overrides computer experience above-->
+        <div id="experienceMobile" class="large mobile">
+            <h2>My Work Experience</h3>
+            <p>I started work with Accenture in June of 2018 shortly after receiving my degree from George Mason University. Below is a summary of my experience with Accenture so far. Click the titles 
+                in the left column for more details. </p>
+            <table id="experienceMobile">
+                <tr>
+                    <th class='orange' id="specialistMobile">Software Engineer Specialist</th>
+                    <td id="dateSpecMobile" class="visible">Present</br>to</br>Oct. '20</td>
+                </tr>
+                <tr>
+                    <td id="descSpecMobile" colspan="2">Functioning as the <span class="orange">Technical Lead</span> for one of AFS's ServiceNow programs.
+                        Resposibilities include: 
+                        <blockquote><span class='orange'>></span> Manage development team with notable projects including Telecom Integrations, Virtual Agent implementation, and Archiving of over 60 million records
+                        </br></br><span class='orange'>></span> Manage over a dozen client ServiceNow instances by organizing patching/upgrade schedules, weekly meetings with ServiceNow Rep, and monitoring platform performance/availability
+                        </br></br><span class='orange'>></span> Architect new solutions ranging from break fixes to multi-month application and integration projects</blockquote>
+                    </td> 
+                </tr>
+                <tr>
+                    <th class="blue" id="seniorMobile">Software Engineer</br>Senior Analyst</td>
+                    <td id="dateSenMobile" class="visible">Oct. '20</br>to</br>Oct. '19</td>
+                </tr>
+                <tr>
+                    <td id="descSenMobile" colspan="2">Functioned as a <span class='orange'>Development Team Lead</span> for one of AFS's ServiceNow programs. Resposibilities include:
+                        <blockquote><span class='orange'>></span> Led development team to deploy releases across various applications including Incident, Change, Problem, Knowledge, Service Portal, and Service Catalog
+                        </br></br><span class='orange'>></span> Held weekly status meetings with various client IT Groups to create timelines and prioritize developments
+                        </br></br><span class='orange'>></span> Managed over a dozen client ServiceNow instances by organizing patching/upgrade schedules, weekly meetings with ServiceNow Rep, and monitoring platform performance/availability</blockquote>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="blue" id="analyst">Software Engineer Analyst</td>
+                    <td id="dateAnaMobile" class="visible">Oct. '19</br>to</br>Jun. '18</td>
+                </tr>
+                    <td id="descSpecMobile" colspan="2">
+                        Functioned as a <span class='orange'>Business Analyst</span> for one of AFS's ServiceNow programs. Resposibilities include:
+                        <blockquote><span class='orange'>></span> Managed development team backlog coordinating with Accenture Leads and Client Stakeholders to gather, solution, and track requirements 
+                        </br></br><span class='orange'>></span> Managed development team releases to ensure requirements meet client needs and follow development best practices
+                        </br></br><span class='orange'>></span> Support the management of client ServiceNow instance through performance and availability monitoring</blockquote>
+                    </td>
+                <tr>
+
                 </tr>
             </table>
         </div><!--end of experience-->

@@ -18,7 +18,7 @@
 }());
 */
 
-// Sticky Nav Bar
+// Nav Bar
 
 (function() {
     let nav = document.getElementById('nav');
@@ -37,14 +37,21 @@
 
     function resetTop() {
         top = nav.offsetTop;
+        mobileNav();
     }
 
+    function mobileNav() {
+        let $width = $(window).width();
+        if($width < 600) $('.list').hide();
+        else $('.list').show();
+    }
+    window.addEventListener('load', mobileNav, false);
     window.addEventListener('scroll', stickyNav, false);
     window.addEventListener('resize', resetTop, false);
 }());
 
 
-// My Work Experience
+// My Work Experience Computer
 (function() {
    
     function getTarget(e) {
@@ -114,3 +121,16 @@
     }
 
 }());
+
+//My work experience Mobile
+$(function() {
+    let $width = $(window).width();
+    if($width < 600) {
+        $('.computer').hide();
+        $('.mobile').show();
+    }
+    else {
+        $('.computer').show();
+        $('.mobile').hide();
+    }
+});

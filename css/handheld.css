@@ -6,13 +6,14 @@ body {
     margin-right: 5%;*/
     width: 100%;
     font-size: 100%;
-    margin: 10px auto;
+    /*margin: 10px auto;*/
     /*min-width: 45em;*/
     overflow-x: hidden;
 }
 
 #entry {
     height: 100%;
+    border: 2px black solid;
 }
 
 /*
@@ -29,9 +30,9 @@ empty {
     margin-right: 15%;
     width: 70%;*/
     /*width: 800px;*/
-    padding-top: 5%;
+   /* padding-top: 5%;*/
     vertical-align: middle;
-    line-height: 350%;
+    /*line-height: 200%;*/
     position: fixed;
     z-index: -99;
     width: 100%;
@@ -40,7 +41,8 @@ empty {
 #header_hello, #header_name, #header_I, #header_desc {
     margin-left: auto;
     margin-right: auto;
-    width: 800px;
+    width: 75%;
+    margin: auto;
 }
 
 #header_hello{
@@ -50,14 +52,17 @@ empty {
 }
 
 #header_name {
-    font-size: 300%;
     color: #FBFAF5;
+    margin-top: 0%;
+    margin-bottom: 4%;
+    line-height: 100%;
 }
 
 #header_I {
-    font-size: 300%;
     color: #A2B1C8;
     line-height: initial;
+    margin-bottom: 4%;
+    line-height: 95%;
 }
 
 #header_desc {
@@ -75,17 +80,16 @@ empty {
     border-left-color: #0F223D;
     border-style: solid;
     border-width: 1px;
-    margin: 0 auto;
     padding: 7px 0px;
     text-align: center;
     /*position: absolute;*/
-    width: 100%;
+    /*width: 100%;*/
     bottom: 0px;
 }
 
 #nav a {
     display: inline-block;
-    width: 13.5%;
+    width: 30%;
     font-family: monospace;
     font-size: 125%;
 }
@@ -134,7 +138,7 @@ li::before {
 
 #tech1, #tech2 {
     float:left;
-    width: 10%;
+    width: 35%;
 }
 
 #experience {
@@ -142,11 +146,10 @@ li::before {
 }
 
 .large {
-    width: 1040px;
-    margin: 0px auto;
-    padding-left: 20px;
-    padding-right:20px;
-    padding-top: 30px;
+    width: 90%;
+    padding-left: 5%;
+    padding-right:5%;
+    padding-top: 1%;
     background-color: #293547;
     border: #293547 solid;
 }
@@ -158,7 +161,7 @@ li::before {
 
 img.align_right {
     float:right;
-    margin-left: 75px;
+    margin-left: 1%;
 }
 
 img.circle {
@@ -167,13 +170,13 @@ img.circle {
 }
 
 img.medium {
-    width: 250px;
-    height: 250px;
+    width: 50%;
+    height: 25%;
 }
 
 table {
     font-size: 90%;
-    width: 1000px;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     border-collapse: collapse;
@@ -240,6 +243,7 @@ footer {
 #bookshelf {
     clear:left;
     background-color: #293547;
+    margin-right: auto;
 }
 
 li.read::before {
@@ -284,4 +288,5 @@ li.toRead::before {
 
 .nonsticky {
     position: absolute;
+    bottom: 0;
 }
