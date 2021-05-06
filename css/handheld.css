@@ -13,7 +13,6 @@ body {
 
 #entry {
     height: 100%;
-    border: 2px black solid;
 }
 
 /*
@@ -191,7 +190,7 @@ th {
     width: 110px;
 }
 
-#specialist, #senior, #analyst {
+#rowSpecMobile, #rowSenMobile, #rowAnaMobile, #packageRowMobile {
     cursor: pointer;
 }
 
@@ -204,11 +203,11 @@ blockquote {
     margin-left: 20px;
 }
 
-th.blue {
+tr.blue {
     border-left: 2px solid #2F68BD;
 }
 
-th.orange {
+tr.orange {
     border-left: 2px solid #F07824;
 }
 

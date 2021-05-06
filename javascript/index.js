@@ -1,25 +1,3 @@
-// Control Entry page
-/*
-(function() {
-  
-    let body = document.getElementById('body');
-    let nav = document.getElementById('nav');
-    let entry = document.getElementById('entry');
-    let test = document.getElementById('header_hello');
-
-    function scrollDown() {
-        body.scrollTop = nav.offsetTop
-    }
-    if(entry.offsetTop == 10) {
-        alert('in if');
-        window.addEventListener('scroll', scrollDown, false);
-    }
-    
-}());
-*/
-
-// Nav Bar
-
 (function() {
     let nav = document.getElementById('nav');
     let top = nav.offsetTop;
@@ -128,9 +106,150 @@ $(function() {
     if($width < 600) {
         $('.computer').hide();
         $('.mobile').show();
+
+        let $rowSpecMobile = $('#rowSpecMobile');
+        let $rowSenMobile = $('#rowSenMobile');
+        let $rowAnaMobile = $('#rowAnaMobile');
+        let $projectsDiv = $('#projects');
+
+        let $specDesc = $("<tr>" + 
+        "<td id='descSpecMobile' colspan='2'>Functioning as the <span class='orange'>Technical Lead</span> for one of AFS's ServiceNow programs." +
+            "Resposibilities include: " +
+            "<blockquote><span class='orange'>></span> Manage development team with notable projects including Telecom Integrations, Virtual Agent implementation, and Archiving of over 60 million records" +
+            "</br></br><span class='orange'>></span> Manage over a dozen client ServiceNow instances by organizing patching/upgrade schedules, weekly meetings with ServiceNow Rep, and monitoring platform performance/availability" +
+            "</br></br><span class='orange'>></span> Architect new solutions ranging from break fixes to multi-month application and integration projects</blockquote>" +
+        "</td> " +
+    "</tr>");
+        let $senDesc = $("<tr>" +
+        "<td id='descSenMobile' colspan='2'>Functioned as a <span class='orange'>Development Team Lead</span> for one of AFS's ServiceNow programs. Resposibilities include:" +
+            "<blockquote><span class='orange'>></span> Led development team to deploy releases across various applications including Incident, Change, Problem, Knowledge, Service Portal, and Service Catalog" +
+            "</br></br><span class='orange'>></span> Held weekly status meetings with various client IT Groups to create timelines and prioritize developments" +
+            "</br></br><span class='orange'>></span> Managed over a dozen client ServiceNow instances by organizing patching/upgrade schedules, weekly meetings with ServiceNow Rep, and monitoring platform performance/availability</blockquote>" +
+        "</td>" +
+    "</tr>");
+        let $anaDesc = $("<tr id='anaDescRow'>" +
+        "<td id='descSpecMobile' colspan='2'>" +
+            "Functioned as a <span class='orange'>Business Analyst</span> for one of AFS's ServiceNow programs. Resposibilities include:" +
+            "<blockquote><span class='orange'>></span> Managed development team backlog coordinating with Accenture Leads and Client Stakeholders to gather, solution, and track requirements " +
+            "</br></br><span class='orange'>></span> Managed development team releases to ensure requirements meet client needs and follow development best practices" +
+            "</br></br><span class='orange'>></span> Support the management of client ServiceNow instance through performance and availability monitoring</blockquote>" +
+        "</td>" +
+    "</tr>");
+        $('#experienceMobile').on('click', function(e){
+            if($(e.target).is($rowSpecMobile.children()[0]) || $(e.target).is($rowSpecMobile.children()[1])) {
+                if(!$rowSenMobile.next().is($rowAnaMobile)) $rowSenMobile.next().detach();
+                if(!$rowAnaMobile.next().is($projectsDiv)) $rowAnaMobile.next().detach();
+
+                if($rowSpecMobile.next().is($rowSenMobile)) {
+                    $rowSpecMobile.after($specDesc);
+                    $(this).children().each(function() {
+                        $(this).children().children().removeClass('orange');
+                        $(this).children().children().addClass('blue');
+                    });
+                    $rowSpecMobile.children(":first").removeClass('blue');
+                    $rowSpecMobile.children(":first").addClass('orange');
+                }
+                else {
+                    $rowSpecMobile.children(":first").removeClass('orange');
+                    $rowSpecMobile.children(":first").addClass('blue');
+                    
+                    $rowSpecMobile.next().detach();
+                }
+            }
+
+            if($(e.target).is($rowSenMobile.children()[0]) || $(e.target).is($rowSenMobile.children()[1])) {
+                if(!$rowSpecMobile.next().is($rowSenMobile)) $rowSpecMobile.next().detach();
+                if(!$rowAnaMobile.next().is($projectsDiv)) $rowAnaMobile.next().detach();
+
+                if($rowSenMobile.next().is($rowAnaMobile)) {
+                    $rowSenMobile.after($senDesc);
+
+                    $(this).children().each(function() {
+                        $(this).children().children().removeClass('orange');
+                        $(this).children().children().addClass('blue');
+                    });
+                    $rowSenMobile.children(":first").removeClass('blue');
+                    $rowSenMobile.children(":first").addClass('orange');
+                }
+                else {
+                    $rowSenMobile.children(":first").removeClass('orange');
+                    $rowSenMobile.children(":first").addClass('blue');
+                    
+                    $rowSenMobile.next().detach();
+                }
+            }
+
+            if($(e.target).is($rowAnaMobile.children()[0]) || $(e.target).is($rowAnaMobile.children()[1])) {
+                if(!$rowSpecMobile.next().is($rowSenMobile)) $rowSpecMobile.next().detach();
+                if(!$rowSenMobile.next().is($rowAnaMobile)) $rowSenMobile.next().detach();
+             
+                if($rowAnaMobile.next().attr('id') == undefined) {
+                    $rowAnaMobile.after($anaDesc);
+
+                    $(this).children().each(function() {
+                        $(this).children().children().removeClass('orange');
+                        $(this).children().children().addClass('blue');
+                    });
+                    $rowAnaMobile.children(":first").removeClass('blue');
+                    $rowAnaMobile.children(":first").addClass('orange');
+                }
+                else { 
+                    $rowAnaMobile.children(":first").removeClass('orange');
+                    $rowAnaMobile.children(":first").addClass('blue');
+
+                    $rowAnaMobile.next().detach();
+                }
+            }
+        });
+
     }
     else {
         $('.computer').show();
         $('.mobile').hide();
     }
+});
+
+//Projects Mobile
+$(function() {
+    let $width = $(window).width();
+        if($width < 600) {
+            $('.computer').hide();
+            $('.mobile').show();
+
+            let $packageRowMobile = $('#packageRowMobile');
+            let $contact = $('#contact');
+
+            let $packageDesc = $("<tr id='packageDescRow'>" +
+            "<td id='packageDesc' colspan = '2'>" +
+                "A web application built on Python using an implementation of " +
+                "Flask to track USPS Packages via a publically available USPS" + 
+                "Package Tracking API" +
+            "</td>" +
+        "</tr>");
+        
+            $('#projectsMobile').on('click', function(e){
+                if($(e.target).is($packageRowMobile.children()[0]) || $(e.target).is($packageRowMobile.children()[1])) {
+                    if($packageRowMobile.next().attr('id') == undefined) {
+                        $packageRowMobile.after($packageDesc);
+                        $(this).children().each(function() {
+                            $(this).children().children().removeClass('orange');
+                            $(this).children().children().addClass('blue');
+                        });
+                        $packageRowMobile.children(":first").removeClass('blue');
+                        $packageRowMobile.children(":first").addClass('orange');
+                    }
+                    else {
+                        $packageRowMobile.children(":first").removeClass('orange');
+                        $packageRowMobile.children(":first").addClass('blue');
+                        
+                        $packageRowMobile.next().detach();
+                    }
+                }
+            });
+
+        }
+        else {
+            $('.computer').show();
+            $('.mobile').hide();
+        }
 });

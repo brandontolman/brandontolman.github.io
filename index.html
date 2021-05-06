@@ -70,7 +70,7 @@
             </div><!--end of bookshelf-->
         </div><!--end of about_me-->
 
-        <div id="experience" class="large computer">
+        <div id="experienceDiv" class="large computer">
             <h2>My Work Experience</h3>
             <p>I started work with Accenture in June of 2018 shortly after receiving my degree from George Mason University. Below is a summary of my experience with Accenture so far. Click the titles 
                 in the left column for more details. </p>
@@ -105,51 +105,27 @@
         </div><!--end of experience-->
 
 <!--Mobile Experience. Only shows if device used is less than 600px. Overrides computer experience above-->
-        <div id="experienceMobile" class="large mobile">
+        <div id="experienceMobileDiv" class="large mobile">
             <h2>My Work Experience</h3>
             <p>I started work with Accenture in June of 2018 shortly after receiving my degree from George Mason University. Below is a summary of my experience with Accenture so far. Click the titles 
                 in the left column for more details. </p>
             <table id="experienceMobile">
-                <tr>
-                    <th class='orange' id="specialistMobile">Software Engineer Specialist</th>
+                <tr id="rowSpecMobile">
+                    <th class='blue' id="specialistMobile">Software Engineer Specialist</th>
                     <td id="dateSpecMobile" class="visible">Present</br>to</br>Oct. '20</td>
                 </tr>
-                <tr>
-                    <td id="descSpecMobile" colspan="2">Functioning as the <span class="orange">Technical Lead</span> for one of AFS's ServiceNow programs.
-                        Resposibilities include: 
-                        <blockquote><span class='orange'>></span> Manage development team with notable projects including Telecom Integrations, Virtual Agent implementation, and Archiving of over 60 million records
-                        </br></br><span class='orange'>></span> Manage over a dozen client ServiceNow instances by organizing patching/upgrade schedules, weekly meetings with ServiceNow Rep, and monitoring platform performance/availability
-                        </br></br><span class='orange'>></span> Architect new solutions ranging from break fixes to multi-month application and integration projects</blockquote>
-                    </td> 
-                </tr>
-                <tr>
-                    <th class="blue" id="seniorMobile">Software Engineer</br>Senior Analyst</td>
+                <tr id="rowSenMobile">
+                    <th class='blue' id="seniorMobile">Software Engineer</br>Senior Analyst</td>
                     <td id="dateSenMobile" class="visible">Oct. '20</br>to</br>Oct. '19</td>
                 </tr>
-                <tr>
-                    <td id="descSenMobile" colspan="2">Functioned as a <span class='orange'>Development Team Lead</span> for one of AFS's ServiceNow programs. Resposibilities include:
-                        <blockquote><span class='orange'>></span> Led development team to deploy releases across various applications including Incident, Change, Problem, Knowledge, Service Portal, and Service Catalog
-                        </br></br><span class='orange'>></span> Held weekly status meetings with various client IT Groups to create timelines and prioritize developments
-                        </br></br><span class='orange'>></span> Managed over a dozen client ServiceNow instances by organizing patching/upgrade schedules, weekly meetings with ServiceNow Rep, and monitoring platform performance/availability</blockquote>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="blue" id="analyst">Software Engineer Analyst</td>
+                <tr id="rowAnaMobile">
+                    <th class='blue' id="analystMobile">Software Engineer Analyst</td>
                     <td id="dateAnaMobile" class="visible">Oct. '19</br>to</br>Jun. '18</td>
-                </tr>
-                    <td id="descSpecMobile" colspan="2">
-                        Functioned as a <span class='orange'>Business Analyst</span> for one of AFS's ServiceNow programs. Resposibilities include:
-                        <blockquote><span class='orange'>></span> Managed development team backlog coordinating with Accenture Leads and Client Stakeholders to gather, solution, and track requirements 
-                        </br></br><span class='orange'>></span> Managed development team releases to ensure requirements meet client needs and follow development best practices
-                        </br></br><span class='orange'>></span> Support the management of client ServiceNow instance through performance and availability monitoring</blockquote>
-                    </td>
-                <tr>
-
                 </tr>
             </table>
         </div><!--end of experience-->
 
-        <div id="projects" class="large">
+        <div id="projects" class="large computer">
             <h2>Projects I've Built</h3>
             <p>Outside of implementing ServiceNow solutions, I have been working to expand my
                 knowledge of other technoloiges and application development frameworks. Below
@@ -163,6 +139,21 @@
                         Flask to track USPS Packages via a publically available USPS 
                         Package Tracking API
                     </td>
+                </tr>
+            </table>
+        </div><!--end of work-->
+
+        <!--mobile Projects-->
+        <div id="projectsDivMobile" class="large mobile">
+            <h2>Projects I've Built</h3>
+            <p>Outside of implementing ServiceNow solutions, I have been working to expand my
+                knowledge of other technoloiges and application development frameworks. Below
+                are a few of my personal project I've built:
+            </p>
+            <table id="projectsMobile">
+                <tr id = 'packageRowMobile'>
+                    <th id='packageMobile' class = 'blue'>Package Tracking</br>Application</th>
+                    <td>Technologies used:</br><span class="orange">Python, Flask, HTML, CSS</span></td>
                 </tr>
             </table>
         </div><!--end of work-->
