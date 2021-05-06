@@ -55,6 +55,7 @@ empty {
     margin-top: 0%;
     margin-bottom: 4%;
     line-height: 100%;
+    font-size: 250%;
 }
 
 #header_I {
@@ -62,6 +63,7 @@ empty {
     line-height: initial;
     margin-bottom: 4%;
     line-height: 95%;
+    font-size: 250%;
 }
 
 #header_desc {
@@ -288,4 +290,8 @@ li.toRead::before {
 .nonsticky {
     position: absolute;
     bottom: 0;
+}
+
+footer {
+    background-color: #293547;
 }
