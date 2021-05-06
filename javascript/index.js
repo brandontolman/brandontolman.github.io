@@ -2,11 +2,10 @@
     let nav = document.getElementById('nav');
     //let top = nav.offsetTop;
     //let top = getOffsetTop(nav);
-    //alert(top + " " + window.innerHeight + " " + $('nav').height());
     //let top = window.innerHeight - $('nav').height() - 16;
-   // alert($('nav').offset().top + " " + top);
-   let windowTop = window.innerHeight;
-   let top = $('nav').offset().top;
+    let mobileSpace = 0;
+    let windowTop = window.innerHeight;
+    let top = $('nav').offset().top;
     function getOffsetTop(element) {
         let offsetTop = 0;
         while(element) {
@@ -33,15 +32,19 @@
 
     function resetTop() {
         //top = getOffsetTop(nav);
+        mobileNav();
         top = window.innerHeight - $('nav').height() - 16;
         //top = top + (windowTop - window.innerHeight);
         windowTop = window.innerHeight;
-        mobileNav();
     }
 
     function mobileNav() {
         let $width = $(window).width();
-        if($width < 600) $('.list').hide();
+        if($width < 600) { 
+            $('.list').hide();
+            mobileSpace = window.innerHeight - $('entry').offset().top;
+            top = top-mobileSpace;
+         }
         else $('.list').show();
     }
     window.addEventListener('load', mobileNav, false);
