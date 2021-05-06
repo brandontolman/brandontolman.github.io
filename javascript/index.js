@@ -4,12 +4,16 @@
 
     function stickyNav() {
         if (window.scrollY >= top) {
-            nav.className = 'sticky';
+            //nav.className = 'sticky';
            // $('html').addClass('background');
+           $('nav').removeClass('nonsticky');
+           $('nav').addClass('sticky');
         }
         else {
-            nav.className = 'nonsticky';
+            //nav.className = 'nonsticky';
            // $('html').removeClass('background');
+           $('nav').removeClass('sticky');
+           $('nav').addClass('nonsticky');
         }
     }
 
