@@ -1,6 +1,17 @@
 (function() {
     let nav = document.getElementById('nav');
-    let top = nav.offsetTop;
+    //let top = nav.offsetTop;
+    //let top = getOffsetTop(nav);
+    //alert(top + " " + window.innerHeight + " " + $('nav').height());
+    let top = window.innerHeight - $('nav').height() - 16;
+    function getOffsetTop(element) {
+        let offsetTop = 0;
+        while(element) {
+          offsetTop += element.offsetTop;
+          element = element.offsetParent;
+        }
+        return offsetTop;
+      }
 
     function stickyNav() {
         if (window.scrollY >= top) {
@@ -18,7 +29,8 @@
     }
 
     function resetTop() {
-        top = nav.offsetTop;
+        //top = getOffsetTop(nav);
+        top = top = window.innerHeight - $('nav').height() - 16;
         mobileNav();
     }
 
@@ -109,7 +121,6 @@ $(function() {
     let $width = $(window).width();
     if($width < 600) {
         $('.computer').hide();
-        $('experienceDiv').detach();
         $('.mobile').show();
 
         let $rowSpecMobile = $('#rowSpecMobile');
