@@ -3,7 +3,10 @@
     //let top = nav.offsetTop;
     //let top = getOffsetTop(nav);
     //alert(top + " " + window.innerHeight + " " + $('nav').height());
-    let top = window.innerHeight - $('nav').height() - 16;
+    //let top = window.innerHeight - $('nav').height() - 16;
+   // alert($('nav').offset().top + " " + top);
+   let windowTop = window.innerHeight;
+   let top = $('nav').offset().top;
     function getOffsetTop(element) {
         let offsetTop = 0;
         while(element) {
@@ -30,7 +33,9 @@
 
     function resetTop() {
         //top = getOffsetTop(nav);
-        top = top = window.innerHeight - $('nav').height() - 16;
+        top = window.innerHeight - $('nav').height() - 16;
+        //top = top + (windowTop - window.innerHeight);
+        windowTop = window.innerHeight;
         mobileNav();
     }
 
