@@ -109,6 +109,7 @@ $(function() {
     let $width = $(window).width();
     if($width < 600) {
         $('.computer').hide();
+        $('experienceDiv').detach();
         $('.mobile').show();
 
         let $rowSpecMobile = $('#rowSpecMobile');

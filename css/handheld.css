@@ -35,6 +35,7 @@ empty {
     position: fixed;
     z-index: -99;
     width: 100%;
+    padding-top: 0;
 }
 
 #header_hello, #header_name, #header_I, #header_desc {
