@@ -48,6 +48,7 @@ empty {
     text-decoration: none;
     color: #F07824;
     font-family: monospace;
+    font-size: 120%;
 }
 
 #header_name {
@@ -55,7 +56,7 @@ empty {
     margin-top: 0%;
     margin-bottom: 4%;
     line-height: 100%;
-    font-size: 250%;
+    font-size: 210%;
 }
 
 #header_I {
@@ -63,13 +64,14 @@ empty {
     line-height: initial;
     margin-bottom: 4%;
     line-height: 95%;
-    font-size: 250%;
+    font-size: 210%;
 }
 
 #header_desc {
     text-decoration: none;
     color: #A2B1C8;
     line-height: initial;
+    font-size: 120%
     /*font-family: monospace;*/
 }
 
@@ -171,8 +173,9 @@ img.circle {
 }
 
 img.medium {
-    width: 50%;
-    height: 25%;
+  height: 50%;
+  width: 50%;
+  
 }
 
 table {
