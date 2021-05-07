@@ -1,40 +1,45 @@
 (function() {
-    let nav = document.getElementById('nav');
-    //let top = nav.offsetTop;
-    //let top = getOffsetTop(nav);
-    //let top = window.innerHeight - $('nav').height() - 16;
-    let mobileSpace = 0;
     let windowTop = window.innerHeight;
     let top = $('nav').offset().top;
-    function getOffsetTop(element) {
-        let offsetTop = 0;
-        while(element) {
-          offsetTop += element.offsetTop;
-          element = element.offsetParent;
-        }
-        return offsetTop;
-      }
+    let mobile = false;
+    let lastScrolltop = 0;
+    let bottom = window.innerHeight;
 
     function stickyNav() {
-        if (window.scrollY >= top) {
-            //nav.className = 'sticky';
-           // $('html').addClass('background');
+        if (window.scrollY >= top && mobile == false) {
            $('nav').removeClass('nonsticky');
            $('nav').addClass('sticky');
         }
-        else {
-            //nav.className = 'nonsticky';
-           // $('html').removeClass('background');
+        else if (mobile == false){
            $('nav').removeClass('sticky');
            $('nav').addClass('nonsticky');
         }
+
+        if (window.scrollY >= bottom && mobile == true) {
+           $('nav').removeClass('nonsticky');
+           $('nav').addClass('sticky');
+           let st = $(window).scrollTop();
+           if(st > lastScrolltop) {
+               $('nav').hide();
+           }
+           else {
+                $('nav').show();
+                lastScrolltop = st;
+           }
+           lastScrolltop = st;
+        }
+        else if (mobile == true){
+           $('nav').removeClass('sticky');
+           $('nav').addClass('nonsticky');
+           $('nav').show();
+        }
+        
     }
 
     function resetTop() {
-        //top = getOffsetTop(nav);
         mobileNav();
         top = window.innerHeight - $('nav').height() - 16;
-        //top = top + (windowTop - window.innerHeight);
+        bottom = window.innerHeight;
         windowTop = window.innerHeight;
     }
 
@@ -42,9 +47,7 @@
         let $width = $(window).width();
         if($width < 600) { 
             $('.list').hide();
-            mobileSpace = window.innerHeight - $('#entry').height();
-            //alert(mobileSpace);
-            top = top-mobileSpace;
+            mobile = true;
          }
         else $('.list').show();
     }
