@@ -42,8 +42,9 @@
         let $width = $(window).width();
         if($width < 600) { 
             $('.list').hide();
-            mobileSpace = window.innerHeight - $('entry').offset().top;
-            top = top-mobileSpace;
+            mobileSpace = window.innerHeight - $('#entry').height();
+            //alert(mobileSpace);
+            top = top+mobileSpace;
          }
         else $('.list').show();
     }
