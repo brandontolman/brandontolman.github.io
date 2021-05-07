@@ -44,7 +44,7 @@
             $('.list').hide();
             mobileSpace = window.innerHeight - $('#entry').height();
             //alert(mobileSpace);
-            top = top+mobileSpace;
+            top = top-mobileSpace;
          }
         else $('.list').show();
     }
