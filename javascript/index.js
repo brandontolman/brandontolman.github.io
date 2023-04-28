@@ -70,18 +70,35 @@
     function workExperience(e) {
         let desc = document.getElementById('desc');
         target = getTarget(e);
-        if(target.id == 'specialist') {
+        if(target.id == 'associate') {
             desc.innerHTML = "Functioning as the <span class='orange'>Technical Lead</span> for one of AFS's ServiceNow programs. Resposibilities include:"
             + "<blockquote><span class='orange'>></span> Manage development team with notable projects including Telecom Integrations, Virtual Agent implementation, and Archiving of over 60 million records"
             + "</br></br><span class='orange'>></span> Manage over a dozen client ServiceNow instances by organizing patching/upgrade schedules, weekly meetings with ServiceNow Rep, and monitoring platform performance/availability"
             + "</br></br><span class='orange'>></span> Architect new solutions ranging from break fixes to multi-month application and integration projects</blockquote>";
             
+            document.getElementById('dateAsso').className = 'visible';
+            document.getElementById('dateSpec').className = 'hidden';
+            document.getElementById('dateSen').className = 'hidden';
+            document.getElementById('dateAna').className = 'hidden';
+            associate.className = 'orange';
+            specialist.className = 'blue';
+            senior.className = 'blue';
+            analyst.className = 'blue';
+        }
+        else if(target.id == 'specialist') {
+            desc.innerHTML = "Functioning as the <span class='orange'>Technical Lead</span> for one of AFS's ServiceNow programs. Resposibilities include:"
+            + "<blockquote><span class='orange'>></span> Manage development team with notable projects including Telecom Integrations, Virtual Agent implementation, and Archiving of over 60 million records"
+            + "</br></br><span class='orange'>></span> Manage over a dozen client ServiceNow instances by organizing patching/upgrade schedules, weekly meetings with ServiceNow Rep, and monitoring platform performance/availability"
+            + "</br></br><span class='orange'>></span> Architect new solutions ranging from break fixes to multi-month application and integration projects</blockquote>";
+            
+            document.getElementById('dateAsso').className = 'hidden';
             document.getElementById('dateSpec').className = 'visible';
             document.getElementById('dateSen').className = 'hidden';
             document.getElementById('dateAna').className = 'hidden';
+            associate.className = 'blue';
             specialist.className = 'orange';
             senior.className = 'blue';
-            analyst.className = 'blue';  
+            analyst.className = 'blue'; 
         }
         else if(target.id == 'senior') {
             desc.innerHTML = "Functioned as a <span class='orange'>Development Team Lead</span> for one of AFS's ServiceNow programs. Resposibilities include:"
@@ -89,12 +106,14 @@
         + "</br></br><span class='orange'>></span> Held weekly status meetings with various client IT Groups to create timelines and prioritize developments"
         + "</br></br><span class='orange'>></span> Managed over a dozen client ServiceNow instances by organizing patching/upgrade schedules, weekly meetings with ServiceNow Rep, and monitoring platform performance/availability</blockquote>";
 
-        document.getElementById('dateSpec').className = 'hidden';
-        document.getElementById('dateSen').className = 'visible';
-        document.getElementById('dateAna').className = 'hidden';
-        specialist.className = 'blue';
-        senior.className = 'orange';
-        analyst.className = 'blue'; 
+            document.getElementById('dateAsso').className = 'hidden';
+            document.getElementById('dateSpec').className = 'hidden';
+            document.getElementById('dateSen').className = 'visible';
+            document.getElementById('dateAna').className = 'hidden';
+            associate.className = 'blue';
+            specialist.className = 'blue';
+            senior.className = 'orange';
+            analyst.className = 'blue';
         }
         else if(target.id == 'analyst'){
             desc.innerHTML = "Functioned as a <span class='orange'>Business Analyst</span> for one of AFS's ServiceNow programs. Resposibilities include:"
@@ -102,12 +121,14 @@
             + "</br></br><span class='orange'>></span> Managed development team releases to ensure requirements meet client needs and follow development best practices"
             + "</br></br><span class='orange'>></span> Support the management of client ServiceNow instance through performance and availability monitoring</blockquote>";
     
+            document.getElementById('dateAsso').className = 'hidden';
             document.getElementById('dateSpec').className = 'hidden';
             document.getElementById('dateSen').className = 'hidden';
             document.getElementById('dateAna').className = 'visible';
+            associate.className = 'blue';
             specialist.className = 'blue';
             senior.className = 'blue';
-            analyst.className = 'orange'; 
+            analyst.className = 'orange';; 
         }
 
         if (e.preventDefault) {
@@ -135,13 +156,22 @@ $(function() {
         $('.computer').hide();
         $('.mobile').show();
 
+        let $rowAssoMobile = $('#rowAssoMobile');
         let $rowSpecMobile = $('#rowSpecMobile');
         let $rowSenMobile = $('#rowSenMobile');
         let $rowAnaMobile = $('#rowAnaMobile');
         let $projectsDiv = $('#projects');
 
+        let $assoDesc = $("<tr>" +
+        "<td id='descAssoMobile' colspan='3'>Functioned as the <span class='orange'>Delivery & Architecture Lead</span> for one of AFS's ServiceNow programs." +
+                "Responsibilities include: " +
+                "<blockquote><span class='orange'>></span> Solution and technical Architecture for development efforts" +
+                "</br></br><span class='orange'>></span> Manage delopment teams ensuring delivery excellence" +
+                "</br></br><span class='orange'>></span> Manage and build client relationships accross the account</blockquote>" +
+            "</td>" +
+    "</tr>");
         let $specDesc = $("<tr>" + 
-        "<td id='descSpecMobile' colspan='2'>Functioning as the <span class='orange'>Technical Lead</span> for one of AFS's ServiceNow programs." +
+        "<td id='descSpecMobile' colspan='2'>Functioned as the <span class='orange'>Technical Lead</span> for one of AFS's ServiceNow programs." +
             "Resposibilities include: " +
             "<blockquote><span class='orange'>></span> Manage development team with notable projects including Telecom Integrations, Virtual Agent implementation, and Archiving of over 60 million records" +
             "</br></br><span class='orange'>></span> Manage over a dozen client ServiceNow instances by organizing patching/upgrade schedules, weekly meetings with ServiceNow Rep, and monitoring platform performance/availability" +
@@ -164,7 +194,30 @@ $(function() {
         "</td>" +
     "</tr>");
         $('#experienceMobile').on('click', function(e){
+            if($(e.target).is($rowAssoMobile.children()[0]) || $(e.target).is($rowAssoMobile.children()[1])) {
+                if(!$rowSpecMobile.next().is($rowSenMobile)) $rowSpecMobile.next().detach();
+                if(!$rowSenMobile.next().is($rowAnaMobile)) $rowSenMobile.next().detach();
+                if(!$rowAnaMobile.next().is($projectsDiv)) $rowAnaMobile.next().detach();
+
+                if($rowAssoMobile.next().is($rowSpecMobile)) {
+                    $rowAssoMobile.after($specDesc);
+                    $(this).children().each(function() {
+                        $(this).children().children().removeClass('orange');
+                        $(this).children().children().addClass('blue');
+                    });
+                    $rowAssoMobile.children(":first").removeClass('blue');
+                    $rowAssoMobile.children(":first").addClass('orange');
+                }
+                else {
+                    $rowAssoMobile.children(":first").removeClass('orange');
+                    $rowAssoMobile.children(":first").addClass('blue');
+                    
+                    $rowAssoMobile.next().detach();
+                }
+            }
+
             if($(e.target).is($rowSpecMobile.children()[0]) || $(e.target).is($rowSpecMobile.children()[1])) {
+                if(!$rowAssoMobile.next().is($rowSpecMobile)) $rowAssoMobile.next().detach();
                 if(!$rowSenMobile.next().is($rowAnaMobile)) $rowSenMobile.next().detach();
                 if(!$rowAnaMobile.next().is($projectsDiv)) $rowAnaMobile.next().detach();
 
@@ -186,6 +239,7 @@ $(function() {
             }
 
             if($(e.target).is($rowSenMobile.children()[0]) || $(e.target).is($rowSenMobile.children()[1])) {
+                if(!$rowAssoMobile.next().is($rowSpecMobile)) $rowAssoMobile.next().detach();
                 if(!$rowSpecMobile.next().is($rowSenMobile)) $rowSpecMobile.next().detach();
                 if(!$rowAnaMobile.next().is($projectsDiv)) $rowAnaMobile.next().detach();
 
@@ -208,6 +262,7 @@ $(function() {
             }
 
             if($(e.target).is($rowAnaMobile.children()[0]) || $(e.target).is($rowAnaMobile.children()[1])) {
+                if(!$rowAssoMobile.next().is($rowSpecMobile)) $rowAssoMobile.next().detach();
                 if(!$rowSpecMobile.next().is($rowSenMobile)) $rowSpecMobile.next().detach();
                 if(!$rowSenMobile.next().is($rowAnaMobile)) $rowSenMobile.next().detach();
              
