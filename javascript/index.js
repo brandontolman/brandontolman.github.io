@@ -71,10 +71,10 @@
         let desc = document.getElementById('desc');
         target = getTarget(e);
         if(target.id == 'associate') {
-            desc.innerHTML = "Functioning as the <span class='orange'>Technical Lead</span> for one of AFS's ServiceNow programs. Resposibilities include:"
-            + "<blockquote><span class='orange'>></span> Manage development team with notable projects including Telecom Integrations, Virtual Agent implementation, and Archiving of over 60 million records"
-            + "</br></br><span class='orange'>></span> Manage over a dozen client ServiceNow instances by organizing patching/upgrade schedules, weekly meetings with ServiceNow Rep, and monitoring platform performance/availability"
-            + "</br></br><span class='orange'>></span> Architect new solutions ranging from break fixes to multi-month application and integration projects</blockquote>";
+            desc.innerHTML = "Functioning as the <span class='orange'>Delivery & Architecture Lead</span> for one of AFS's ServiceNow programs. Resposibilities include:"
+            + "<blockquote><span class='orange'>></span> Solution and technical Architecture for development efforts"
+            + "</br></br><span class='orange'>></span> Manage delopment teams ensuring delivery excellence"
+            + "</br></br><span class='orange'>></span> Manage and build client relationships accross the account</blockquote>";
             
             document.getElementById('dateAsso').className = 'visible';
             document.getElementById('dateSpec').className = 'hidden';
