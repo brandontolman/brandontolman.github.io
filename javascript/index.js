@@ -165,9 +165,9 @@ $(function() {
         let $assoDesc = $("<tr>" +
         "<td id='descAssoMobile' colspan='2'>Functioning as the <span class='orange'>Delivery & Architecture Lead</span> for one of AFS's ServiceNow programs." +
             "Responsibilities include: " +
-            + "<blockquote><span class='orange'>></span> Solution and Technical Architecture for development efforts working with clients to find the best solutions for business needs and ensuring solutions follows ServiceNow and technical development best practices"
-            + "</br></br><span class='orange'>></span> Manage delopment teams ensuring delivery excellence. Notable efforts include CMDB Integrations (JDBC), CSM Implementation, eBonding Integrations (REST/SOAP), and workstation (and related hardware) ordering application for all of the organization"
-            + "</br></br><span class='orange'>></span> Manage and build client relationships accross the account and point of contact for delivery/solution/architecture for all efforts</blockquote>" +
+            "<blockquote><span class='orange'>></span> Solution and Technical Architecture for development efforts working with clients to find the best solutions for business needs and ensuring solutions follows ServiceNow and technical development best practices" +
+            "</br></br><span class='orange'>></span> Manage delopment teams ensuring delivery excellence. Notable efforts include CMDB Integrations (JDBC), CSM Implementation, eBonding Integrations (REST/SOAP), and workstation (and related hardware) ordering application for all of the organization" +
+            "</br></br><span class='orange'>></span> Manage and build client relationships accross the account and point of contact for delivery/solution/architecture for all efforts</blockquote>" +
             "</td>" +
     "</tr>");
         let $specDesc = $("<tr>" + 
