@@ -163,7 +163,7 @@ $(function() {
         let $projectsDiv = $('#projects');
 
         let $assoDesc = $("<tr>" +
-        "<td id='descAssoMobile' colspan='3'>Functioning as the <span class='orange'>Delivery & Architecture Lead</span> for one of AFS's ServiceNow programs." +
+        "<td id='descAssoMobile' colspan='2'>Functioning as the <span class='orange'>Delivery & Architecture Lead</span> for one of AFS's ServiceNow programs." +
                 "Responsibilities include: " +
                 "<blockquote><span class='orange'>></span> Solution and technical Architecture for development efforts" +
                 "</br></br><span class='orange'>></span> Manage delopment teams ensuring delivery excellence" +
@@ -200,7 +200,7 @@ $(function() {
                 if(!$rowAnaMobile.next().is($projectsDiv)) $rowAnaMobile.next().detach();
 
                 if($rowAssoMobile.next().is($rowSpecMobile)) {
-                    $rowAssoMobile.after($specDesc);
+                    $rowAssoMobile.after($assoDesc);
                     $(this).children().each(function() {
                         $(this).children().children().removeClass('orange');
                         $(this).children().children().addClass('blue');
