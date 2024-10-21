@@ -70,16 +70,35 @@
     function workExperience(e) {
         let desc = document.getElementById('desc');
         target = getTarget(e);
-        if(target.id == 'associate') {
+        if(target.id == 'manager') {
+            desc.innerHTML = "Functioning as the <span class='orange'>Delivery & Architecture Lead</span> for one of AFS's ServiceNow programs. Resposibilities include:"
+            + "<blockquote><span class='orange'>></span> Establish and lead architecture team and frameworks based on ServiceNow and AFS ServiceNow best practices across 4 delivery teams and 20+ team members"
+            + "</br></br><span class='orange'>></span> Solution over $1.5 million is new work ranging from CSM implementations, integrations, and external portals"
+            + "</br></br><span class='orange'>></span> Manage and build client relationships accross the account and point of contact for delivery/solution/architecture for all efforts</blockquote>";
+
+            document.getElementById('dateMan').className = 'visible'
+            document.getElementById('dateAsso').className = 'hidden';
+            document.getElementById('dateSpec').className = 'hidden';
+            document.getElementById('dateSen').className = 'hidden';
+            document.getElementById('dateAna').className = 'hidden';
+            manager.className = 'orange';
+            associate.className = 'blue';
+            specialist.className = 'blue';
+            senior.className = 'blue';
+            analyst.className = 'blue';
+        }
+        else if(target.id == 'associate') {
             desc.innerHTML = "Functioning as the <span class='orange'>Delivery & Architecture Lead</span> for one of AFS's ServiceNow programs. Resposibilities include:"
             + "<blockquote><span class='orange'>></span> Solution and Technical Architecture ensuring solutions meet client business needs and follow ServiceNow and technical development best practices"
             + "</br></br><span class='orange'>></span> Manage development teams with a focus in delivery excellence. Notable efforts include CMDB Integrations (JDBC), CSM Implementation, eBonding Integrations (REST/SOAP), and workstation (and related hardware) ordering application for all of the organization"
             + "</br></br><span class='orange'>></span> Manage and build client relationships accross the account and point of contact for delivery/solution/architecture for all efforts</blockquote>";
-            
+
+            document.getElementById('dateMan').className = 'hidden';
             document.getElementById('dateAsso').className = 'visible';
             document.getElementById('dateSpec').className = 'hidden';
             document.getElementById('dateSen').className = 'hidden';
             document.getElementById('dateAna').className = 'hidden';
+            manager.className = 'blue';
             associate.className = 'orange';
             specialist.className = 'blue';
             senior.className = 'blue';
@@ -91,10 +110,12 @@
             + "</br></br><span class='orange'>></span> Managed over a dozen client ServiceNow instances by organizing patching/upgrade schedules, weekly meetings with ServiceNow Rep, and monitoring platform performance/availability"
             + "</br></br><span class='orange'>></span> Architected new solutions ranging from break fixes to multi-month application and integration projects</blockquote>";
             
+            document.getElementById('dateMan').className = 'hidden';
             document.getElementById('dateAsso').className = 'hidden';
             document.getElementById('dateSpec').className = 'visible';
             document.getElementById('dateSen').className = 'hidden';
             document.getElementById('dateAna').className = 'hidden';
+            manager.className = 'orange';
             associate.className = 'blue';
             specialist.className = 'orange';
             senior.className = 'blue';
@@ -106,10 +127,12 @@
         + "</br></br><span class='orange'>></span> Held weekly status meetings with various client IT Groups to create timelines and prioritize developments"
         + "</br></br><span class='orange'>></span> Managed over a dozen client ServiceNow instances by organizing patching/upgrade schedules, weekly meetings with ServiceNow Rep, and monitoring platform performance/availability</blockquote>";
 
+            document.getElementById('dateMan').className = 'hidden';
             document.getElementById('dateAsso').className = 'hidden';
             document.getElementById('dateSpec').className = 'hidden';
             document.getElementById('dateSen').className = 'visible';
             document.getElementById('dateAna').className = 'hidden';
+            manager.className = 'blue';
             associate.className = 'blue';
             specialist.className = 'blue';
             senior.className = 'orange';
@@ -121,10 +144,12 @@
             + "</br></br><span class='orange'>></span> Managed development team releases to ensure requirements meet client needs and follow development best practices"
             + "</br></br><span class='orange'>></span> Support the management of client ServiceNow instance through performance and availability monitoring</blockquote>";
     
+            document.getElementById('dateMan').className = 'hidden';
             document.getElementById('dateAsso').className = 'hidden';
             document.getElementById('dateSpec').className = 'hidden';
             document.getElementById('dateSen').className = 'hidden';
             document.getElementById('dateAna').className = 'visible';
+            manager.className = 'blue';
             associate.className = 'blue';
             specialist.className = 'blue';
             senior.className = 'blue';
@@ -156,12 +181,20 @@ $(function() {
         $('.computer').hide();
         $('.mobile').show();
 
+        let $rowManMobile = $('#rowManMobile');
         let $rowAssoMobile = $('#rowAssoMobile');
         let $rowSpecMobile = $('#rowSpecMobile');
         let $rowSenMobile = $('#rowSenMobile');
         let $rowAnaMobile = $('#rowAnaMobile');
         let $projectsDiv = $('#projects');
 
+        let $manDesc = $("<tr>" +
+        "<td id='descManMobile' colspan='2'>Functioning as the <span class='orange'>Delivery & Architecture Lead</span> for one of AFS's ServiceNow programs. Resposibilities include: " +
+            "<blockquote><span class='orange'>></span> Establish and lead architecture team and frameworks based on ServiceNow and AFS ServiceNow best practices across 4 delivery teams and 20+ team members" +
+            "</br></br><span class='orange'>></span> Solution over $1.5 million is new work ranging from CSM implementations, integrations, and external portals" +
+            "</br></br><span class='orange'>></span> Manage and build client relationships accross the account and point of contact for delivery/solution/architecture for all efforts</blockquote>" +
+            "</td>" +
+    "</tr>");
         let $assoDesc = $("<tr>" +
         "<td id='descAssoMobile' colspan='2'>Functioning as the <span class='orange'>Delivery & Architecture Lead</span> for one of AFS's ServiceNow programs." +
             "Responsibilities include: " +
@@ -194,7 +227,31 @@ $(function() {
         "</td>" +
     "</tr>");
         $('#experienceMobile').on('click', function(e){
+            if($(e.target).is($rowManMobile.children()[0]) || $(e.target).is($rowManMobile.children()[1])) {
+                if(!$rowAssoMobile.next().is($rowSpecMobile)) $rowAssoMobile.next().detach();
+                if(!$rowSpecMobile.next().is($rowSenMobile)) $rowSpecMobile.next().detach();
+                if(!$rowSenMobile.next().is($rowAnaMobile)) $rowSenMobile.next().detach();
+                if(!$rowAnaMobile.next().is($projectsDiv)) $rowAnaMobile.next().detach();
+
+                if($rowManMobile.next().is($rowAssoMobile)) {
+                    $rowManMobile.after($manDesc);
+                    $(this).children().each(function() {
+                        $(this).children().children().removeClass('orange');
+                        $(this).children().children().addClass('blue');
+                    });
+                    $rowManMobile.children(":first").removeClass('blue');
+                    $rowManMobile.children(":first").addClass('orange');
+                }
+                else {
+                    $rowManMobile.children(":first").removeClass('orange');
+                    $rowManMobile.children(":first").addClass('blue');
+                    
+                    $rowManMobile.next().detach();
+                }
+            }
+            
             if($(e.target).is($rowAssoMobile.children()[0]) || $(e.target).is($rowAssoMobile.children()[1])) {
+                if(!$rowManMobile.next().is($rowAssoMobile)) $rowManMobile.next().detach();
                 if(!$rowSpecMobile.next().is($rowSenMobile)) $rowSpecMobile.next().detach();
                 if(!$rowSenMobile.next().is($rowAnaMobile)) $rowSenMobile.next().detach();
                 if(!$rowAnaMobile.next().is($projectsDiv)) $rowAnaMobile.next().detach();
@@ -217,6 +274,7 @@ $(function() {
             }
 
             if($(e.target).is($rowSpecMobile.children()[0]) || $(e.target).is($rowSpecMobile.children()[1])) {
+                if(!$rowManMobile.next().is($rowAssoMobile)) $rowManMobile.next().detach();
                 if(!$rowAssoMobile.next().is($rowSpecMobile)) $rowAssoMobile.next().detach();
                 if(!$rowSenMobile.next().is($rowAnaMobile)) $rowSenMobile.next().detach();
                 if(!$rowAnaMobile.next().is($projectsDiv)) $rowAnaMobile.next().detach();
@@ -239,6 +297,7 @@ $(function() {
             }
 
             if($(e.target).is($rowSenMobile.children()[0]) || $(e.target).is($rowSenMobile.children()[1])) {
+                if(!$rowManMobile.next().is($rowAssoMobile)) $rowManMobile.next().detach();
                 if(!$rowAssoMobile.next().is($rowSpecMobile)) $rowAssoMobile.next().detach();
                 if(!$rowSpecMobile.next().is($rowSenMobile)) $rowSpecMobile.next().detach();
                 if(!$rowAnaMobile.next().is($projectsDiv)) $rowAnaMobile.next().detach();
@@ -262,6 +321,7 @@ $(function() {
             }
 
             if($(e.target).is($rowAnaMobile.children()[0]) || $(e.target).is($rowAnaMobile.children()[1])) {
+                if(!$rowManMobile.next().is($rowAssoMobile)) $rowManMobile.next().detach();
                 if(!$rowAssoMobile.next().is($rowSpecMobile)) $rowAssoMobile.next().detach();
                 if(!$rowSpecMobile.next().is($rowSenMobile)) $rowSpecMobile.next().detach();
                 if(!$rowSenMobile.next().is($rowAnaMobile)) $rowSenMobile.next().detach();
