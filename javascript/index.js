@@ -115,7 +115,7 @@
             document.getElementById('dateSpec').className = 'visible';
             document.getElementById('dateSen').className = 'hidden';
             document.getElementById('dateAna').className = 'hidden';
-            manager.className = 'orange';
+            manager.className = 'blue';
             associate.className = 'blue';
             specialist.className = 'orange';
             senior.className = 'blue';
