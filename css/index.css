@@ -188,7 +188,7 @@ th {
     width: 110px;
 }
 
-#manager #associate, #specialist, #senior, #analyst {
+#manager, #associate, #specialist, #senior, #analyst {
     cursor: pointer;
 }
 
