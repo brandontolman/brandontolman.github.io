@@ -189,7 +189,7 @@ $(function() {
         let $projectsDiv = $('#projects');
 
         let $manDesc = $("<tr>" +
-        "<td id='descManMobile' colspan='2'>Functioning as the <span class='orange'>Delivery & Architecture Lead</span> for one of AFS's ServiceNow programs. Resposibilities include: " +
+        "<td id='descManMobile' colspan='2'>Functioning as the <span class='orange'>Lead Architect</span> for one of AFS's ServiceNow programs. Resposibilities include: " +
             "<blockquote><span class='orange'>></span> Establish and lead architecture team and frameworks based on ServiceNow and AFS ServiceNow best practices across 4 delivery teams and 20+ team members" +
             "</br></br><span class='orange'>></span> Solution over $1.5 million is new work ranging from CSM implementations, integrations, and external portals" +
             "</br></br><span class='orange'>></span> Manage and build client relationships accross the account and point of contact for delivery/solution/architecture for all efforts</blockquote>" +
