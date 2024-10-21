@@ -196,7 +196,7 @@ $(function() {
             "</td>" +
     "</tr>");
         let $assoDesc = $("<tr>" +
-        "<td id='descAssoMobile' colspan='2'>Functioning as the <span class='orange'>Delivery & Architecture Lead</span> for one of AFS's ServiceNow programs." +
+        "<td id='descAssoMobile' colspan='2'>Functioned as the <span class='orange'>Delivery & Architecture Lead</span> for one of AFS's ServiceNow programs." +
             "Responsibilities include: " +
             "<blockquote><span class='orange'>></span> Solution and Technical Architecture ensuring solutions meet client business needs and follow ServiceNow and technical development best practices" +
             "</br></br><span class='orange'>></span> Manage development teams with a focus in delivery excellence. Notable efforts include CMDB Integrations (JDBC), CSM Implementation, eBonding Integrations (REST/SOAP), and workstation (and related hardware) ordering application for all of the organization" +
